@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    min-height: 100vh;
+    background-color: black;
+    background-image: url(https://imgs.search.brave.com/zjm8NDukqyU3_IFERVqiL6nnPqmvKPfvMGDfw8tyBTk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9naWZk/Yi5jb20vaW1hZ2Vz/L2hpZ2gvZ2xpdGNo/aW5nLWhhY2tlci1o/YWNraW5nLXY1Nmc0/bDF2YXlrbXNubzYu/Z2lm.gif);
+    
+}
+
+.close{
+    background-color: lightblue;
+    color: black;
+    padding: 0 80px;
+    margin: 0 530px;
+}
+
+.bb{
+    width: 125px;
+    padding: 0 5px;
+    margin: 5px;
+    
+
+}
+
+.bug{
+    padding: 0 19px;
+    color: white;
+    font-size: 17px;
+}
+
+.peli{
+    padding: 0 5px;
+    margin: 5px;
+}
+
+.pelis{
+    padding: 0 19px;
+    color: white;
+    font-size: 17px;
+}
+
+
+.verde{
+    background-color: rgb(19, 59, 59);
+    
+}
+
+.panel{
+    color: aqua;
+
+}
+.hola{
+    color: aqua;
+}
+.nav{
+    background-color: black;
+    height: 80px;
+    color: #00ff00;
+    font-size: 14px;
+    
+    
+}
+
+nav__logo{
+    font-size: 1.5em;
+    font-weight: 900;
+}
+.nav__container{
+    display: flex;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__label, .nav__input{
+    display: none;
+}
+.nav__menu{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3em;
+}
+.nav__item{
+    color: white;
+    text-decoration: none;
+    --clippy: polygon(0 0, 0 1%, 0 100%, 0 100%);
+    
+}
+.nav__item::after{
+    content: "";
+    display: block;
+    background-color: white;
+    width: 90%;
+    margin-top: 3px;
+    height: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path .3s;
+}
+.nav__input{
+    padding: 12px;
+    font-size: 19px;
+    border: 1px solid white;
+    border-radius: 18px;
+    width: 400px;
+}
+.ses{
+    text-align: center;
+    color: #0cdddd;
+    
+}
+.nais{
+    top: 80px;
+    align-items: center;
+    text-align: center;
+    
+}
+.master{
+    background-color: orange;
+}
+.maste{
+    background-color: violet;
+}
+.du{
+    background-color: azure;
+}
+
+.alinear{
+    
+    width: 350px;
+    height: 250px;
+    margin: 0 8px;
+}
+.martes{
+    display: flex;
+}
+.marte{
+    display: flex;
+}
+mart{
+    display: flex;
+}
+.btn{
+    color: black;
+    background-color: blue;
+}
+.nav__item:hover{
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.filtro{
+    display: none;
+}
+
+@media (max-width: 700px){
+    .nav__label{
+        display: block;
+        cursor: pointer;
+        
+    }
+    .nav__menu{
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        background-color: darkred;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+        overflow-y: scroll;
+    }
+    .nav__input:checked + .nav__menu{
+        clip-path: circle(100% at center);
+    }
+}
