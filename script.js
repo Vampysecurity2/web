@@ -24,5 +24,5 @@ botonLogin.addEventListener("click", (e) => {
  const usuario = document.getElementById("usuario").value;
  const contraseña = document.getElementById("contraseña").value;
  // Aquí debes agregar la lógica para verificar las credenciales del usuario y permitir el acceso
- alert("Iniciaste sesión con éxito");
+ window.location.href = 'page.html';
 });
