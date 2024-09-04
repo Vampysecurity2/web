@@ -1,60 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
- <title>Login | Vampy Security</title>
- <link rel="shortcut icon" href="a.jpg" />
- <style>
-  body {
-   background-image: url("a.jpg"); /* reemplaza con la imagen de fondo deseada */
-   background-size: auto 250px;
-  }
-  .contenedor {
-   width: 300px;
-   margin: 50px auto;
-   padding: 20px;
-   background-color: #fff;
-   border: 1px solid #ddd;
-   border-radius: 10px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .formulario {
-   margin-top: 20px;
-  }
-  .input {
-   width: 100%;
-   height: 40px;
-   margin-bottom: 10px;
-   padding: 10px;
-   border: 1px solid #ccc;
-  }
-  .boton {
-   width: 100%;
-   height: 40px;
-   background-color: #4CAF50;
-   color: #fff;
-   padding: 10px;
-   border: none;
-   border-radius: 10px;
-   cursor: pointer;
-  }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso</title>
+    <link rel="icon" href="https://imgs.search.brave.com/Y2LaOhmZI6g3tTjt2RK2RtpDj1yWXx8u7XTcGast3tw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQw/MDc3OTM4Mi9waG90/by9uZXR3b3JrLXNl/Y3VyaXR5LWJhY2tn/cm91bmQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTN5ZHQx/djJ5TEVYbjMtWmZQ/M3BJTmU4eHRGWG44/X3U5MHRlUnlHMVVm/U1k9" type="image/png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- <div class="contenedor">
-  <h2>Iniciar sesión</h2>
-  <form class="formulario" id="formulario_login">
-   <input type="text" id="usuario" class="input" placeholder="Usuario">
-   <input type="password" id="contraseña" class="input" placeholder="Contraseña">
-   <button class="boton" id="boton_login">Iniciar sesión</button>
-  </form>
-  <p>¿No tienes cuenta? <a href="registro.html" id="registro_link">Regístrate</a></p>
-  <form class="formulario" id="formulario_registro" style="display: none;">
-   <input type="text" id="usuario_registro" class="input" placeholder="Usuario">
-   <input type="password" id="contraseña_registro" class="input" placeholder="Contraseña">
-   <button class="boton" id="boton_registro">Regístrate</button>
-  </form>
- </div>
-
- <script src="script.js"></script>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Ingresar</button>
+        </form>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
+
