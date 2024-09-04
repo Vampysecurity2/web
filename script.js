@@ -1,28 +1,24 @@
-const formularioLogin = document.getElementById("formulario_login");
-const formularioRegistro = document.getElementById("formulario_registro");
-const registroLink = document.getElementById("registro_link");
-const botonLogin = document.getElementById("boton_login");
-const botonRegistro = document.getElementById("boton_registro");
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-registroLink.addEventListener("click", () => {
- formularioLogin.style.display = "none";
- formularioRegistro.style.display = "block";
+    if (username === 'admin' && password === '1234') {
+        window.location.href = 'inicio.html';
+    } else {
+        document.getElementById('errorMessage').textContent = 'Usuario o contraseña incorrectos';
+    }
 });
 
-botonRegistro.addEventListener("click", (e) => {
- e.preventDefault();
- const usuario = document.getElementById("usuario_registro").value;
- const contraseña = document.getElementById("contraseña_registro").value;
- // Aquí debes agregar la lógica para crear un nuevo usuario y guardar sus credenciales
- alert("Usuario creado con éxito");
- formularioRegistro.style.display = "none";
- formularioLogin.style.display = "block";
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
 });
 
-botonLogin.addEventListener("click", (e) => {
- e.preventDefault();
- const usuario = document.getElementById("usuario").value;
- const contraseña = document.getElementById("contraseña").value;
- // Aquí debes agregar la lógica para verificar las credenciales del usuario y permitir el acceso
- window.location.href = 'page.html';
+document.addEventListener('keydown', function(event) {
+    // Lista de teclas de función que deseas deshabilitar
+    const functionKeys = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'];
+
+    if (functionKeys.includes(event.key)) {
+        event.preventDefault();
+    }
 });
