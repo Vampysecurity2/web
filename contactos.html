@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link rel="icon" href="https://imgs.search.brave.com/Y2LaOhmZI6g3tTjt2RK2RtpDj1yWXx8u7XTcGast3tw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQw/MDc3OTM4Mi9waG90/by9uZXR3b3JrLXNl/Y3VyaXR5LWJhY2tn/cm91bmQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTN5ZHQx/djJ5TEVYbjMtWmZQ/M3BJTmU4eHRGWG44/X3U5MHRlUnlHMVVm/U1k9" type="image/png">
-
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -24,6 +22,8 @@
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
         }
         nav {
             margin-bottom: 20px;
@@ -83,6 +83,16 @@
         }
         button:hover {
             background-color: #555;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
