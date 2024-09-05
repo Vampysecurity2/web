@@ -21,6 +21,10 @@
         .container {
             text-align: center;
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
         }
         nav {
             margin-bottom: 20px;
@@ -28,7 +32,7 @@
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #fff;
+            color: #30010196;
             font-weight: bold;
         }
         nav a:hover {
@@ -37,7 +41,8 @@
         h1 {
             margin-bottom: 20px;
         }
-        footer{
+        
+        footer {
             text-align: right;
             color: red;
         }
@@ -55,6 +60,16 @@
         }
         .description {
             margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -80,10 +95,7 @@
         </div>
         <div class="description">
             <p>El hacking ético es la práctica de realizar pruebas de seguridad autorizadas en sistemas informáticos, redes y aplicaciones para identificar y corregir vulnerabilidades. Los hackers éticos, también conocidos como hackers de sombrero blanco, utilizan sus habilidades para proteger a las organizaciones de ciberataques malintencionados, asegurándose de que las medidas de seguridad sean efectivas y robustas.</p>
-            <br>
-            <footer>@copyright By Vampy Security</footer>
         </div>
     </div>
-    
 </body>
 </html>
