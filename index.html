@@ -5,7 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acceso</title>
     <link rel="icon" href="https://imgs.search.brave.com/Y2LaOhmZI6g3tTjt2RK2RtpDj1yWXx8u7XTcGast3tw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQw/MDc3OTM4Mi9waG90/by9uZXR3b3JrLXNl/Y3VyaXR5LWJhY2tn/cm91bmQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTN5ZHQx/djJ5TEVYbjMtWmZQ/M3BJTmU4eHRGWG44/X3U5MHRlUnlHMVVm/U1k9" type="image/png">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('https://th.bing.com/th/id/OIP.xKrvL9FEJ2ZtFK4jlWCmlwHaEb?rs=1&pid=ImgDetMain');
+            color: #333;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .login-container {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
@@ -22,4 +87,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
