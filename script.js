@@ -22,3 +22,10 @@ document.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
+
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey) {
+        event.preventDefault();
+        console.log('Tecla Ctrl cancelada');
+    }
+});
