@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RITUAL · VAMPYSEC ABISMO</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>𓆩</text></svg>">
+  <style>
+    :root {
+      --neon-green: #00ff99;
+      --neon-cyan: #00ffff;
+      --blood-red: #ff0033;
+      --void-black: #000;
+      --deep-void: #0a0a1a;
+      --shadow-glow: 0 0 20px;
+      --pulse: pulse 2s infinite alternate;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: radial-gradient(circle at center, #0a1a0a, #000 70%);
+      color: var(--neon-green);
+      font-family: 'Courier New', 'Consolas', monospace;
+      min-height: 100vh;
+      padding: 2.5rem;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1000px; margin: 0 auto; position: relative; }
+    .glitch-title {
+      font-size: 4.2rem;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 6px;
+      color: var(--neon-cyan);
+      text-shadow: 
+        0 0 15px var(--neon-green),
+        0 0 30px var(--neon-cyan),
+        0 0 50px var(--blood-red),
+        0 0 80px var(--blood-red);
+      animation: glitch-hard 3s infinite, flicker-intense 8s infinite;
+      margin: 1.5rem 0 3rem;
+      position: relative;
+    }
+    .glitch-title::after {
+      content: "RITUAL CENTRAL";
+      position: absolute;
+      top: 0; left: 0;
+      color: var(--blood-red);
+      opacity: 0.4;
+      transform: translate(3px, 3px);
+      animation: glitch-shadow 4s infinite;
+    }
+    @keyframes glitch-hard {
+      0%, 100% { transform: translate(0); }
+      10% { transform: translate(-4px, 4px); }
+      20% { transform: translate(4px, -4px); }
+      30% { transform: translate(-3px, 3px); }
+      40% { transform: translate(3px, -3px); }
+      50% { transform: translate(-2px, 2px); }
+    }
+    @keyframes flicker-intense {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; text-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-cyan); }
+      20%, 24%, 55% { opacity: 0.3; text-shadow: none; }
+    }
+    @keyframes glitch-shadow {
+      0%, 100% { transform: translate(3px, 3px); }
+      50% { transform: translate(-3px, -3px); }
+    }
+    #welcome {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 4rem;
+      color: var(--neon-cyan);
+      text-shadow: 0 0 12px var(--neon-green);
+      letter-spacing: 2px;
+      min-height: 80px;
+    }
+    .ritual-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+    .ritual-card {
+      background: rgba(5, 15, 5, 0.85);
+      border: 2px solid var(--neon-green);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--shadow-glow) var(--neon-green);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+    .ritual-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(0,255,153,0.25), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.8s;
+      pointer-events: none;
+    }
+    .ritual-card:hover::before { opacity: 1; }
+    .ritual-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 0 60px var(--neon-cyan), 0 0 100px rgba(255,0,51,0.4);
+      border-color: var(--neon-cyan);
+    }
+    .ritual-card h3 {
+      color: var(--neon-cyan);
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 0 8px var(--neon-green);
+    }
+    .ritual-card p {
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .btn {
+      background: linear-gradient(135deg, var(--neon-green), #00cc88);
+      color: #000;
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.4s;
+      box-shadow: var(--shadow-glow) var(--neon-green);
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, var(--neon-cyan), #00cccc);
+      color: #000;
+      transform: scale(1.08);
+      box-shadow: 0 0 40px var(--neon-cyan), 0 0 80px rgba(0,255,255,0.6);
+    }
+    ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+    ul li { margin: 1rem 0; }
+    .logout {
+      background: linear-gradient(135deg, var(--blood-red), #cc0029);
+      color: white;
+      box-shadow: var(--shadow-glow) var(--blood-red);
+      font-size: 1.4rem;
+      padding: 1.2rem 3rem;
+      margin: 4rem auto 0;
+      display: block;
+      width: fit-content;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+    .logout:hover {
+      background: linear-gradient(135deg, #ff6666, #ff3333);
+      box-shadow: 0 0 70px #ff6666;
+      transform: scale(1.12);
+    }
+    .next-section {
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 1.4rem;
+      opacity: 0.85;
+    }
+    .next-btn {
+      background: transparent;
+      border: 2px solid var(--neon-cyan);
+      color: var(--neon-cyan);
+      padding: 1rem 3rem;
+      font-size: 1.3rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.5s;
+      margin-top: 1.5rem;
+      display: inline-block;
+      text-shadow: 0 0 10px var(--neon-cyan);
+    }
+    .next-btn:hover {
+      background: rgba(0,255,255,0.15);
+      box-shadow: 0 0 50px var(--neon-cyan);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="glitch-title">RITUAL CENTRAL</h1>
+    <h2 id="welcome"></h2>
+
+    <div class="ritual-grid">
+      <div class="ritual-card">
+        <h3>SCAN TARGETS</h3>
+        <p>Inicia el reconocimiento profundo... el abismo ya sabe tu nombre. No seas un pinche script kiddie.</p>
+        <button class="btn" onclick="window.open('https://pentest-tools.com/network-vulnerability-scanning/port-scanner-online-nmap', '_blank')">ABRIR NMAP ONLINE</button>
+      </div>
+
+      <div class="ritual-card">
+        <h3>EXPLOIT KIT</h3>
+        <p>El arsenal prohibido del ritual verdadero 𓆩 — elige tu veneno con cuidado, iluminado.</p>
+        <button class="btn" onclick="window.open('https://www.exploit-db.com/', '_blank')">ABRIR EXPLOIT-DB</button>
+      </div>
+
+      <div class="ritual-card">
+        <h3>LOGS & SHADOWS</h3>
+        <p>Lee los susurros del inframundo... lo que entra aquí, nunca sale igual.</p>
+        <button class="btn" onclick="window.open('https://foro.elhacker.net', '_blank')">ABRIR ELHACKER.NET</button>
+      </div>
+
+      <div class="ritual-card">
+        <h3>GATHERING TOOLS</h3>
+        <p>Recolecta la inteligencia oscura antes del golpe final. El que duda... muere en la oscuridad.</p>
+        <ul>
+          <li><button class="btn" onclick="window.open('https://pentest-tools.com/network-vulnerability-scanning/port-scanner-online-nmap', '_blank')">Socket Port Scan (Nmap)</button></li>
+          <li><button class="btn" onclick="window.open('https://dnsdumpster.com/', '_blank')">DNS Enumeration</button></li>
+          <li><button class="btn" onclick="window.open('https://who.is/', '_blank')">WHOIS Lookup</button></li>
+          <li><button class="btn" onclick="window.open('https://exif.tools/', '_blank')">EXIF Analyzer</button></li>
+          <li><button class="btn" onclick="window.open('https://pentest-tools.com/website-vulnerability-scanning/discover-hidden-directories-and-files', '_blank')">Directory Fuzzer</button></li>
+<li><button class="btn" onclick="window.open('https://www.hybrid-analysis.com/', '_blank')">Hybrid Analysis</button></li>
+          <li><button class="btn" onclick="window.open('https://urlscan.io/', '_blank')">URLScan.io</button></li>
+          <li><button class="btn" onclick="window.open('https://www.virustotal.com/', '_blank')">VirusTotal</button></li>
+        </ul>
+        <button class="logout" onclick="location.href='/logout'">CERRAR SESIÓN</button>
+      </div>
+    </div>
+
+    <div class="next-section">
+      <p>¿Listo para el siguiente nivel del ritual?</p>
+      <a href="descargas.html" class="next-btn">ENTRAR A DESCARGAS → 𓆩</a>
+    </div>
+  </div>
+
+  <script>
+    const welcomeText = "Bienvenido al abismo, Iluminado Vampy 𓆩... El ritual te reclama. No seas manco, domina o perece.";
+    let i = 0;
+    const welcomeEl = document.getElementById("welcome");
+
+    function typeRitual() {
+      if (i < welcomeText.length) {
+        welcomeEl.innerHTML += welcomeText.charAt(i);
+        i++;
+        setTimeout(typeRitual, 55);
+      }
+    }
+    typeRitual();
+  </script>
+</body>
+</html>
+      
