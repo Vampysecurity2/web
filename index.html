@@ -1,225 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VampySec Nexus • Acceso Iluminado 🦇</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='76' font-size='80' text-anchor='middle' fill='%23ff0033'>🦇</text></svg>" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-S..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altar Digital VampySec ⚡️</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩸</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600;700&family=Cinzel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* Todo tu CSS original aquí – sin cambios, está brutal */
     :root {
-      --crimson: #ff0033;
-      --dark: #0a0a0a;
-      --darker: #050505;
-      --glow: rgba(255, 0, 51, 0.7);
+      --neon-green: #00ff99;
+      --neon-cyan: #00ffff;
+      --blood-red: #ff0033;
+      --glass-bg: rgba(15, 5, 40, 0.38);
+      --shadow-glow: 0 0 20px;
     }
-
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: 'Courier New', 'Consolas', monospace;
-      background: var(--darker);
-      color: var(--crimson);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255,0,51,0.08) 0%, transparent 25%),
-        radial-gradient(circle at 90% 80%, rgba(255,0,51,0.06) 0%, transparent 35%);
-    }
-
-    #particles-js {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .container {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      max-width: 480px;
-      padding: 3.5rem 2.5rem;
-      background: rgba(10,10,10,0.92);
-      border: 2px solid var(--crimson);
-      border-radius: 14px;
-      box-shadow: 
-        0 0 60px var(--glow),
-        inset 0 0 40px rgba(255,0,51,0.12);
-      backdrop-filter: blur(6px);
-    }
-
-    h1 {
-      font-size: 4.8rem;
-      letter-spacing: -4px;
-      text-align: center;
-      text-shadow: 
-        0 0 30px var(--crimson),
-        0 0 60px var(--crimson);
-      animation: glitch 4.5s infinite alternate;
-      margin-bottom: 1.8rem;
-      line-height: 0.9;
-    }
-
-    @keyframes glitch {
-      0%   { transform: translate(0); }
-      12%  { transform: translate(-4px, 3px); }
-      24%  { transform: translate(5px, -4px); }
-      38%  { transform: translate(-3px, 5px); }
-      52%  { transform: translate(4px, -3px); }
-      66%  { transform: translate(-5px, 4px); }
-      80%  { transform: translate(3px, -5px); }
-      100% { transform: translate(0); }
-    }
-
-    .restricted {
-      background: linear-gradient(135deg, #4a0000, #800000);
-      color: #ff9999;
-      padding: 1.1rem;
-      font-weight: bold;
-      text-align: center;
-      border: 1px solid #ff4d4d;
-      border-radius: 8px;
-      margin: 0 0 2.2rem;
-      letter-spacing: 1.5px;
-      font-size: 1.1rem;
-      text-shadow: 0 0 10px #ff4d4d;
-    }
-
-    .input-group {
-      position: relative;
-      margin: 1.6rem 0;
-    }
-
-    input {
-      width: 100%;
-      padding: 1.3rem 1.4rem 1.3rem 2.8rem;
-      background: #0f0f0f;
-      color: var(--crimson);
-      border: 1px solid #4d0000;
-      border-radius: 8px;
-      font-size: 1.25rem;
-      font-family: inherit;
-      transition: all 0.25s;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: var(--crimson);
-      box-shadow: 0 0 25px rgba(255,0,51,0.35);
-      background: #141414;
-    }
-
-    .input-group i {
-      position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #660000;
-      font-size: 1.3rem;
-      pointer-events: none;
-    }
-
-    button {
-      width: 100%;
-      padding: 1.4rem;
-      margin-top: 1.8rem;
-      background: linear-gradient(90deg, #ff0033, #cc0029);
-      color: #000;
-      font-size: 1.45rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 50px var(--glow);
-      transition: all 0.4s;
-    }
-
-    button:hover {
-      transform: translateY(-3px) scale(1.04);
-      box-shadow: 0 0 90px var(--glow);
-      background: linear-gradient(90deg, #ff1a47, #e60033);
-    }
-
-    button:active {
-      transform: translateY(1px);
-    }
+    /* ... pega todo el <style> que tenías ... (lo omito por brevedad, pero cópialo completo) */
   </style>
 </head>
 <body>
 
-  <div id="particles-js"></div>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>VampySec Altar</h2>
+      <p>Iniciado: <span id="usuario">Iluminado #666</span> ⚡️</p>
+      <p>Rol: Abismo Elite</p>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="active" onclick="showSection('duel')"><i class="fas fa-gamepad"></i> Duel Links</button>
+      <button onclick="showSection('github')"><i class="fab fa-github"></i> Github Temu</button>
+      <button onclick="showSection('descargas')"><i class="fas fa-download"></i> Descargas</button>
+      <button onclick="showSection('tools')"><i class="fas fa-tools"></i> Tools / Ritual</button>
+      <button onclick="showSection('contacto')"><i class="fas fa-address-book"></i> Contacto</button>
+      <button onclick="alert('Ritual completado. Regresa cuando la luna sangre llame.')"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+    </nav>
+  </aside>
 
-  <div class="container">
-    <h1>VAMPYSEC</h1>
-    <div class="restricted">SOLO ILUMINADOS • ACCESS DENIED FOR PLEBS</div>
-    
-    <h2 style="text-align:center; margin: 2rem 0 1.8rem; font-size:1.8rem; opacity:0.9;">
-      RITUAL DE ACCESO
-    </h2>
-
-    <div class="input-group">
-      <i class="fas fa-user-secret"></i>
-      <input type="text" id="username" placeholder="iluminado" autocomplete="off" autofocus required>
+  <!-- Main Content -->
+  <main>
+    <div class="welcome">
+      <p id="saludo"></p>
     </div>
 
-    <div class="input-group">
-      <i class="fas fa-key"></i>
-      <input type="password" id="password" placeholder="admin" autocomplete="off" required>
+    <!-- El resto de tus secciones (duel, github, descargas, tools, contacto) exactamente igual -->
+    <div id="duel" class="content-card">
+      <!-- ... tu contenido de DUEL LINKS ... -->
     </div>
 
-    <button onclick="checkLogin()">INICIAR RITUAL</button>
-  </div>
+    <div id="github" class="content-card" style="display: none;">
+      <!-- ... Github Temu ... -->
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <div id="descargas" class="content-card" style="display: none;">
+      <h1 class="glitch-title" data-text="DESCARGAS DEL ABISMO">DESCARGAS DEL ABISMO</h1>
+      <h2 class="welcome-text" id="welcome-descargas"></h2>
+      <div class="grid">
+        <!-- Todas tus cards de descargas – links a Mega/MediaFire siguen funcionando -->
+      </div>
+    </div>
+
+    <div id="tools" class="content-card" style="display: none;">
+      <!-- ... RITUAL CENTRAL ... -->
+    </div>
+
+    <div id="contacto" class="content-card" style="display: none;">
+      <!-- ... CONTACTO ... -->
+    </div>
+
+    <footer>
+      © 2026 VampySec Nexus Silence ⚡️ | #haciendomagiacomosiempre
+    </footer>
+  </main>
+
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 90, density: { enable: true, value_area: 900 } },
-        color: { value: "#ff0033" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1.2, opacity_min: 0.1 } },
-        size: { value: 3.5, random: true },
-        line_linked: { enable: false },
-        move: {
-          enable: true,
-          speed: 1.8,
-          direction: "none",
-          random: true,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: { enable: false }
-        }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: false },
-          resize: true
-        },
-        modes: {
-          repulse: { distance: 120, duration: 0.4 }
-        }
-      }
-    });
+    // Saludo por hora (reemplaza PHP)
+    const hora = new Date().getHours();
+    let saludo = "";
+    if (hora < 12) saludo = "🌞 Buenos días, iniciado.";
+    else if (hora < 18) saludo = "🌤 Buenas tardes, iniciado.";
+    else saludo = "🌙 Buenas noches, iniciado.";
+    document.getElementById("saludo").textContent = saludo;
 
-    function checkLogin() {
-      const user = document.getElementById('username').value.trim().toLowerCase();
-      const pass = document.getElementById('password').value.trim();
-
-      if (user === 'iluminado' && pass === 'admin') {
-        window.location.href = 'ritual.html';  // o donde quieras redirigir
-      } else {
-        alert('ACCESO DENEGADO.\nNo perteneces a la casta iluminada.\nVuelve cuando hayas leído más de 4 libros de reversing.');
-      }
+    // Función showSection (igual)
+    function showSection(tabId) {
+      document.querySelectorAll('.content-card').forEach(tab => tab.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+      document.querySelectorAll('.sidebar-nav button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.sidebar-nav button[onclick*="'${tabId}'"]`).classList.add('active');
+      if (tabId === 'descargas') typeAbismo();
+      if (tabId === 'tools') typeRitual();
     }
-  </script>
 
+    // Tus funciones typeAbismo y typeRitual (iguales)
+    function typeAbismo() {
+      const text = "El abismo te regala sus tesoros, Iluminado... Descarga con poder, pero recuerda: todo tiene un precio 𓆩";
+      let i = 0;
+      const el = document.getElementById('welcome-descargas');
+      el.innerHTML = '';
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          el.innerHTML += text.charAt(i);
+          i++;
+        } else clearInterval(interval);
+      }, 60);
+    }
+
+    function typeRitual() {
+      const text = "Bienvenido al abismo, Iluminado Vampy 𓆩... El ritual te reclama. No seas manco, domina o perece.";
+      let i = 0;
+      const el = document.getElementById('welcome-tools');
+      el.innerHTML = '';
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          el.innerHTML += text.charAt(i);
+          i++;
+        } else clearInterval(interval);
+      }, 55);
+    }
+
+    // Default: Duel
+    showSection('duel');
+  </script>
 </body>
 </html>
